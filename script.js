@@ -17,12 +17,7 @@ class LinkedList extends Node {
       next: this.nextNode
     }}}
    
-    {
-      this.value.head.next = {
-        value:value,
-        next: this.nextNode
-      }
-    }
+
     return this.value
   }
   
@@ -34,6 +29,29 @@ list.append('string2')
 
 console.log(list.append('string3'))
 
+
+
+
+// class ListNode {
+//   constructor(data) {
+//       this.data = data
+//       this.next = null                
+//   }
+// }
+
+// class LinkedList {
+//   constructor(head = null) {
+//       this.head = head
+//   }
+// }
+
+// let node1 = new ListNode(2)
+// let node2 = new ListNode(5)
+// node1.next = node2
+
+// let list = new LinkedList(node1)
+
+// console.log(list.head.next.data) //returns 5
 
 
 
