@@ -1,57 +1,41 @@
 // import Node from "./node.js";
 class Node {
-  constructor(value = null, nextNode = null){
-   this.value = value;
-   this.nextNode = nextNode;
+  constructor(value) {
+    this.value = value;
+    this.nextNode = null;
   }
 }
 
 class LinkedList extends Node {
   constructor(value, nextNode) {
     super(value, nextNode);
+    this.head = null;
+    this.length = 0;
   }
-  append(value){
-    if(this.value === null)
-    {this.value = {head:{
-      value:value,
-      next: this.nextNode
-    }}}
-   
+  append(value) {
+    const node = new Node(value);
 
-    return this.value
+    // checks if this.head = null sets new node to head
+    // else will set current head to current
+    // skip while loop cause head nextNode does equal null so we set the nextNode to new node
+    // in the loop we set current to the nextNode after will be null so we skip loop
+    // then set newNode to nextNode
+    if (this.head === null) this.head = node;
+    else {
+      let current = this.head;
+      while (current.nextNode != null) {
+        current = current.nextNode;
+      }
+      current.nextNode = node;
+    }
+    this.length++;
   }
-  
+  prepend(value){
+    
+  }
 }
-const list = new LinkedList()
+const list = new LinkedList(); 
 
-list.append('string')
-list.append('string2')
-
-console.log(list.append('string3'))
-
-
-
-
-// class ListNode {
-//   constructor(data) {
-//       this.data = data
-//       this.next = null                
-//   }
-// }
-
-// class LinkedList {
-//   constructor(head = null) {
-//       this.head = head
-//   }
-// }
-
-// let node1 = new ListNode(2)
-// let node2 = new ListNode(5)
-// node1.next = node2
-
-// let list = new LinkedList(node1)
-
-// console.log(list.head.next.data) //returns 5
 
 
 
