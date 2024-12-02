@@ -1,10 +1,4 @@
-// import Node from "./node.js";
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.nextNode = null;
-  }
-}
+import Node from "./node.js";
 
 class LinkedList extends Node {
   constructor(value, nextNode) {
@@ -133,10 +127,5 @@ list.append("parrot");
 list.append("hamster");
 list.append("snake");
 list.append("turtle");
-// list.tail();
-// console.log(list.size());
-// console.log(list.at(4));
-// console.log(list.pop());
-console.log(list.contains("turtle"));
-console.log(list.find("turtle"));
+
 console.log(list.toString());
